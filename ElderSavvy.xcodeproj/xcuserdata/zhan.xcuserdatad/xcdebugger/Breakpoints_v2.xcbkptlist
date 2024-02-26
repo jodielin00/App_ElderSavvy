@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C2B8C4AE-ADB9-40C1-B783-220AF7F0E4CF"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37CE4EC5-4B60-4B4E-93C4-EB42602621BD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElderSavvy/JORecordVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2265B8A8-D55A-4BCC-B81B-31AB62AEEFCA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElderSavvy/JONoteDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "addNote()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2265B8A8-D55A-4BCC-B81B-31AB62AEEFCA - 12d7225ef452aef4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/Desktop/ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "7416">
+               </Location>
+               <Location
+                  uuid = "2265B8A8-D55A-4BCC-B81B-31AB62AEEFCA - 12d7225ef452aef4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/Desktop/ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "7424">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "937AC11B-8331-45AC-97DE-C0BE43FC53C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElderSavvy/JONoteDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "addNote()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "937AC11B-8331-45AC-97DE-C0BE43FC53C2 - 12d7225ef452ae32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/Desktop/ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "7644">
+               </Location>
+               <Location
+                  uuid = "937AC11B-8331-45AC-97DE-C0BE43FC53C2 - 12d7225ef452ae32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/Desktop/ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "7652">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8AABF007-3E09-4965-A99F-78CC38E4910F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElderSavvy/JONoteDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "addNote()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8AABF007-3E09-4965-A99F-78CC38E4910F - 12d7225ef452afae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/Desktop/ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "8220">
+               </Location>
+               <Location
+                  uuid = "8AABF007-3E09-4965-A99F-78CC38E4910F - 12d7225ef452afae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/Desktop/ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "8472">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
