@@ -16,24 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        let ifyu = IFlySetting()
-//        
-//        [IFlySetting setLogFile:LVL_ALL];
-//
-//        //Set whether to output log messages in Xcode console
-//        [IFlySetting showLogcat:YES];
-//
-//        //Set the local storage path of SDK
-//        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-//        NSString *cachePath = [paths objectAtIndex:0];
-//        [IFlySetting setLogFilePath:cachePath];
-//        NSString *appid = @"58219b80";
-//
-//
-//        //Set APPID
-//        NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",appid];
-//
-//        //Configure and initialize iflytek services.(This interface must been invoked in application:didFinishLaunchingWithOptions:)
-//        [IFlySpeechUtility createUtility:initString];
+        IFlySetting.setLogFile(LOG_LEVEL(rawValue: -1) )
+        IFlySetting.showLogcat(true)
+        let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
+        let cachepath = paths.first
+        IFlySetting.setLogFilePath(cachepath)
+        
+        let initString = "appid=58219b80"
+        IFlySpeechUtility.createUtility(initString)
         
         return true
     }

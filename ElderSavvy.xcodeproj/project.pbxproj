@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F116E1A2B91BA5600C1DA00 /* JOTextConversionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F116E192B91BA5600C1DA00 /* JOTextConversionVC.swift */; };
+		7F116E1D2B91C88100C1DA00 /* JOConvertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F116E1C2B91C88100C1DA00 /* JOConvertTool.m */; };
 		7F736E022B8B37FD00C222F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F736E012B8B37FD00C222F7 /* AppDelegate.swift */; };
 		7F736E042B8B37FD00C222F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F736E032B8B37FD00C222F7 /* SceneDelegate.swift */; };
 		7F736E062B8B37FD00C222F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F736E052B8B37FD00C222F7 /* ViewController.swift */; };
@@ -74,9 +76,13 @@
 		7FBC5F9A2B8B729C00A2302F /* JOBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC5F992B8B729C00A2302F /* JOBaseVC.swift */; };
 		7FBC5F9D2B8B886700A2302F /* JONoteDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC5F9B2B8B886700A2302F /* JONoteDetailsVC.swift */; };
 		7FBC5F9E2B8B886700A2302F /* JONoteDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC5F9C2B8B886700A2302F /* JONoteDetailsVC.xib */; };
+		7FE825E92B945BF600AC35DD /* JOWechatTapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE825E82B945BF600AC35DD /* JOWechatTapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F116E192B91BA5600C1DA00 /* JOTextConversionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOTextConversionVC.swift; sourceTree = "<group>"; };
+		7F116E1B2B91C88100C1DA00 /* JOConvertTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JOConvertTool.h; sourceTree = "<group>"; };
+		7F116E1C2B91C88100C1DA00 /* JOConvertTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JOConvertTool.m; sourceTree = "<group>"; };
 		7F736DFE2B8B37FD00C222F7 /* ElderSavvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElderSavvy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F736E012B8B37FD00C222F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F736E032B8B37FD00C222F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 		7FBC5F992B8B729C00A2302F /* JOBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBaseVC.swift; sourceTree = "<group>"; };
 		7FBC5F9B2B8B886700A2302F /* JONoteDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JONoteDetailsVC.swift; sourceTree = "<group>"; };
 		7FBC5F9C2B8B886700A2302F /* JONoteDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JONoteDetailsVC.xib; sourceTree = "<group>"; };
+		7FE825E82B945BF600AC35DD /* JOWechatTapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOWechatTapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +214,8 @@
 				7FBC5F972B8B725700A2302F /* JONoteDetailVC.swift */,
 				7F891A572B8CA096006A3C41 /* JOSoftListVC.swift */,
 				7F891A592B8CA733006A3C41 /* JOAddressVC.swift */,
+				7F116E192B91BA5600C1DA00 /* JOTextConversionVC.swift */,
+				7FE825E82B945BF600AC35DD /* JOWechatTapVC.swift */,
 				7F736E072B8B37FD00C222F7 /* Main.storyboard */,
 				7F736E0A2B8B37FE00C222F7 /* Assets.xcassets */,
 				7F736E0C2B8B37FE00C222F7 /* LaunchScreen.storyboard */,
@@ -223,6 +232,8 @@
 				7F891A4F2B8C8AA2006A3C41 /* ZJAudioHelp.m */,
 				7F891A522B8C8AA2006A3C41 /* ZJAudioRecorder.h */,
 				7F891A512B8C8AA2006A3C41 /* ZJAudioRecorder.m */,
+				7F116E1B2B91C88100C1DA00 /* JOConvertTool.h */,
+				7F116E1C2B91C88100C1DA00 /* JOConvertTool.m */,
 				7F891A4E2B8C8AA2006A3C41 /* ElderSavvy-Bridging-Header.h */,
 			);
 			path = iflyMSC;
@@ -385,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F116E1A2B91BA5600C1DA00 /* JOTextConversionVC.swift in Sources */,
 				7FBC5F8A2B8B723E00A2302F /* ConstraintRelation.swift in Sources */,
 				7FBC5F882B8B723E00A2302F /* ConstraintMakerEditable.swift in Sources */,
 				7FBC5F952B8B723E00A2302F /* ConstraintMakerRelatable.swift in Sources */,
@@ -398,6 +410,7 @@
 				7FBC5F9D2B8B886700A2302F /* JONoteDetailsVC.swift in Sources */,
 				7FBC5F762B8B723E00A2302F /* ConstraintAttributes.swift in Sources */,
 				7FBC5F8B2B8B723E00A2302F /* ConstraintLayoutGuideDSL.swift in Sources */,
+				7F116E1D2B91C88100C1DA00 /* JOConvertTool.m in Sources */,
 				7FBC5F772B8B723E00A2302F /* ConstraintViewDSL.swift in Sources */,
 				7FBC5F872B8B723E00A2302F /* ConstraintOffsetTarget.swift in Sources */,
 				7FBC5F752B8B723E00A2302F /* ConstraintMakerPriortizable.swift in Sources */,
@@ -424,6 +437,7 @@
 				7FBC5F742B8B723E00A2302F /* ConstraintDescription.swift in Sources */,
 				7FBC5F862B8B723E00A2302F /* ConstraintConstantTarget.swift in Sources */,
 				7FBC5F7E2B8B723E00A2302F /* ConstraintInsetTarget.swift in Sources */,
+				7FE825E92B945BF600AC35DD /* JOWechatTapVC.swift in Sources */,
 				7FBC5F732B8B723E00A2302F /* LayoutConstraintItem.swift in Sources */,
 				7FBC5F832B8B723E00A2302F /* ConstraintLayoutGuide.swift in Sources */,
 				7FBC5F7B2B8B723E00A2302F /* ConstraintDSL.swift in Sources */,
@@ -584,25 +598,29 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6QNQS929UK;
+				DEVELOPMENT_TEAM = D4R2859X5Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ElderSavvy/Lib/iflyMSC",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElderSavvy/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "请求联系人";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "请求定位";
+				INFOPLIST_KEY_NSLocationUsageDescription = "请求定位";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "请求使用麦克风进行语言转化为文字";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jodielin.ElderSavvy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RedCulture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ElderSavvy/Lib/iflyMSC/ElderSavvy-Bridging-Header.h";
@@ -620,25 +638,29 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6QNQS929UK;
+				DEVELOPMENT_TEAM = D4R2859X5Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ElderSavvy/Lib/iflyMSC",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElderSavvy/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "请求联系人";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "请求定位";
+				INFOPLIST_KEY_NSLocationUsageDescription = "请求定位";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "请求使用麦克风进行语言转化为文字";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jodielin.ElderSavvy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RedCulture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ElderSavvy/Lib/iflyMSC/ElderSavvy-Bridging-Header.h";
