@@ -12,6 +12,9 @@ class JORecordVC: UIViewController {
     var index:Int?
     var tempAllDataAry:NSMutableArray?
     
+    var selindexNote:NSDictionary!
+    var selisNew = false
+    
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +60,8 @@ class JORecordVC: UIViewController {
         
     }
     @objc func addNote(){
-        let infoViewController = JONoteDetailVC()
-        infoViewController.isNew = true
-        self.navigationController?.pushViewController(infoViewController, animated: true)
+        selisNew = true
+        performSegue(withIdentifier: "noteDetailVC", sender: nil)
     }
     /*
     // MARK: - Navigation
@@ -96,7 +98,7 @@ extension JORecordVC:UITableViewDelegate,UITableViewDataSource{
             if cell == nil{
                 cell = UITableViewCell(style: .value1, reuseIdentifier: cellID)
             }
-            
+            cell?.selectionStyle = .none
             let indexdic = tempAllDataAry?[indexPath.section] as? Dictionary<String, String>
             if indexdic != nil {
                 let indexStr = indexdic?["title"] as? String
@@ -124,10 +126,8 @@ extension JORecordVC:UITableViewDelegate,UITableViewDataSource{
         }
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let noteDetailVC = JONoteDetailVC()
-            noteDetailVC.indexNote = (tempAllDataAry![indexPath.section] as! NSDictionary)
-            noteDetailVC.isNew = false
-            self.navigationController?.pushViewController(noteDetailVC, animated: false)
+            selindexNote = (tempAllDataAry![indexPath.section] as! NSDictionary)
+            performSegue(withIdentifier: "noteDetailVC", sender: nil)
         }
     
     
@@ -138,4 +138,14 @@ extension JORecordVC:UITableViewDelegate,UITableViewDataSource{
         return ""
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "noteDetailVC" {
+                if let destinationVC = segue.destination as? JONoteDetailVC {
+                    destinationVC.isNew = selisNew
+                    if !selisNew {
+                        destinationVC.indexNote = selindexNote
+                    }
+                }
+            }
+    }
 }

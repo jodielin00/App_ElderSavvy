@@ -74,8 +74,6 @@
 		7FBC5F962B8B723E00A2302F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC5F702B8B723E00A2302F /* README.md */; };
 		7FBC5F982B8B725700A2302F /* JONoteDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC5F972B8B725700A2302F /* JONoteDetailVC.swift */; };
 		7FBC5F9A2B8B729C00A2302F /* JOBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC5F992B8B729C00A2302F /* JOBaseVC.swift */; };
-		7FBC5F9D2B8B886700A2302F /* JONoteDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC5F9B2B8B886700A2302F /* JONoteDetailsVC.swift */; };
-		7FBC5F9E2B8B886700A2302F /* JONoteDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC5F9C2B8B886700A2302F /* JONoteDetailsVC.xib */; };
 		7FE825E92B945BF600AC35DD /* JOWechatTapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE825E82B945BF600AC35DD /* JOWechatTapVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -153,8 +151,6 @@
 		7FBC5F702B8B723E00A2302F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7FBC5F972B8B725700A2302F /* JONoteDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JONoteDetailVC.swift; sourceTree = "<group>"; };
 		7FBC5F992B8B729C00A2302F /* JOBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBaseVC.swift; sourceTree = "<group>"; };
-		7FBC5F9B2B8B886700A2302F /* JONoteDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JONoteDetailsVC.swift; sourceTree = "<group>"; };
-		7FBC5F9C2B8B886700A2302F /* JONoteDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JONoteDetailsVC.xib; sourceTree = "<group>"; };
 		7FE825E82B945BF600AC35DD /* JOWechatTapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOWechatTapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,8 +205,6 @@
 				7FBC5F992B8B729C00A2302F /* JOBaseVC.swift */,
 				7F736E052B8B37FD00C222F7 /* ViewController.swift */,
 				7F736E192B8B47F700C222F7 /* JORecordVC.swift */,
-				7FBC5F9B2B8B886700A2302F /* JONoteDetailsVC.swift */,
-				7FBC5F9C2B8B886700A2302F /* JONoteDetailsVC.xib */,
 				7FBC5F972B8B725700A2302F /* JONoteDetailVC.swift */,
 				7F891A572B8CA096006A3C41 /* JOSoftListVC.swift */,
 				7F891A592B8CA733006A3C41 /* JOAddressVC.swift */,
@@ -380,7 +374,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FBC5F9E2B8B886700A2302F /* JONoteDetailsVC.xib in Resources */,
 				7F736E0E2B8B37FE00C222F7 /* LaunchScreen.storyboard in Resources */,
 				7F736E0B2B8B37FE00C222F7 /* Assets.xcassets in Resources */,
 				7FBC5F962B8B723E00A2302F /* README.md in Resources */,
@@ -407,7 +400,6 @@
 				7FBC5F922B8B723E00A2302F /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				7FBC5F842B8B723E00A2302F /* ConstraintLayoutSupport.swift in Sources */,
 				7F891A542B8C8AA2006A3C41 /* ZJAudioRecorder.m in Sources */,
-				7FBC5F9D2B8B886700A2302F /* JONoteDetailsVC.swift in Sources */,
 				7FBC5F762B8B723E00A2302F /* ConstraintAttributes.swift in Sources */,
 				7FBC5F8B2B8B723E00A2302F /* ConstraintLayoutGuideDSL.swift in Sources */,
 				7F116E1D2B91C88100C1DA00 /* JOConvertTool.m in Sources */,
@@ -608,6 +600,7 @@
 				INFOPLIST_KEY_NSContactsUsageDescription = "请求联系人";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "请求定位";
 				INFOPLIST_KEY_NSLocationUsageDescription = "请求定位";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "请求定位";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "请求使用麦克风进行语言转化为文字";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -648,6 +641,7 @@
 				INFOPLIST_KEY_NSContactsUsageDescription = "请求联系人";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "请求定位";
 				INFOPLIST_KEY_NSLocationUsageDescription = "请求定位";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "请求定位";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "请求使用麦克风进行语言转化为文字";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

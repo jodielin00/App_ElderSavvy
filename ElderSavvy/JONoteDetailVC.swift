@@ -7,19 +7,22 @@
 
 import UIKit
 
-class JONoteDetailVC: JOBaseVC {
+class JONoteDetailVC: UIViewController {
     var indexNote:NSDictionary?
     var titleTextField:UITextField?
+//    var dueTimeLbl:UILabel!
     var bodyTextView:UITextView?
-    var group:String?
     var isNew = false
+    let NotificationContent = UNMutableNotificationContent()
+    var indexDatePicker:UIDatePicker!
+    var oldRemindIdentifier:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.edgesForExtendedLayout = UIRectEdge()
         self.view.backgroundColor = UIColor.white
-        self.title = "要事记录"
+        self.navigationItem.title = "要事记录"
 //        navigationController?.navigationBar.topItem?.title = ""
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardBeShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardBeHidden), name: UIResponder.keyboardDidHideNotification, object: nil)
@@ -37,8 +40,30 @@ class JONoteDetailVC: JOBaseVC {
         }
         
     }
+    
+    //    通知函数
+    func sendNotifaction(title:String,remindDate:Date){
+        NotificationContent.title = title
+        NotificationContent.sound = UNNotificationSound.default
+        var animationDuration: TimeInterval = remindDate.timeIntervalSinceNow
+        if animationDuration < 0 {
+            animationDuration = 1;
+        }
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: animationDuration, repeats: false)
+        let request = UNNotificationRequest(identifier: title + remindDate.description, content: NotificationContent, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
+    }
+    
+    func removeNotifaction(identifiers:String){
+//        let identifiers =  title + remindDate.description
+        let center = UNUserNotificationCenter.current()
+        center.removeDeliveredNotifications(withIdentifiers: [identifiers])
+        center.removePendingNotificationRequests(withIdentifiers: [identifiers])
+    }
+    
     @objc func addNote(){
         let tempDateDataAry = NSMutableArray()
+        let remindTimeStr = getRemindTimeValue()
         if isNew{
             if titleTextField?.text != nil && (titleTextField?.text!.count)! > 0{
                 
@@ -55,6 +80,7 @@ class JONoteDetailVC: JOBaseVC {
                     tempDic.setValue(titleStr, forKey: "title")
                     tempDic.setValue(bodyStr, forKey: "content")
                     tempDic.setValue(timeStr, forKey: "time")
+                    tempDic.setValue(remindTimeStr, forKey: "remindTime")
                     tempDateDataAry.add(tempDic)
                     
                     
@@ -64,10 +90,11 @@ class JONoteDetailVC: JOBaseVC {
                     tempDic.setValue(titleStr, forKey: "title")
                     tempDic.setValue(bodyStr, forKey: "content")
                     tempDic.setValue(timeStr, forKey: "time")
+                    tempDic.setValue(remindTimeStr, forKey: "remindTime")
                     tempDateDataAry.add(tempDic)
                     
                 }
-                
+                sendNotifaction(title: titleStr!, remindDate: indexDatePicker.date)
                 UserDefaults.standard.set(NSArray(array: tempDateDataAry), forKey: "noteListAry")
                 UserDefaults.standard.synchronize()
                 
@@ -94,6 +121,7 @@ class JONoteDetailVC: JOBaseVC {
                         
                         tempDic.setValue(titleStr, forKey: "title")
                         tempDic.setValue(bodyStr, forKey: "content")
+                        tempDic.setValue(remindTimeStr, forKey: "remindTime")
                         //                        tempDic.setValue(timeStr, forKey: "time")
                         tempDateDataAry.removeObject(at: i)
                         tempDateDataAry.insert(tempDic, at: i)
@@ -101,6 +129,12 @@ class JONoteDetailVC: JOBaseVC {
                         break
                     }
                 }
+                if oldRemindIdentifier.count > 0{
+                    removeNotifaction(identifiers: oldRemindIdentifier)
+                }
+                
+                sendNotifaction(title: titleStr!, remindDate: indexDatePicker.date)
+                
                 UserDefaults.standard.set(NSArray(array: tempDateDataAry), forKey: "noteListAry")
                 UserDefaults.standard.synchronize()
                 self.navigationController!.popViewController(animated: true)
@@ -114,7 +148,7 @@ class JONoteDetailVC: JOBaseVC {
         let alertController = UIAlertController(title: "警告", message: "您确定要删除此要事吗？", preferredStyle: .alert)
         let action  = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let indexNoteTime = indexNote!["time"] as! String
-        let action2  = UIAlertAction(title: "删除", style: .destructive, handler: {(UIAlertAction)-> Void in
+        let action2  = UIAlertAction(title: "删除", style: .destructive, handler: { [self](UIAlertAction)-> Void in
             if !self.isNew{
                 let tempDateDataAry = NSMutableArray()
                 let tempAry = UserDefaults.standard.value(forKey: "noteListAry")
@@ -128,6 +162,11 @@ class JONoteDetailVC: JOBaseVC {
                         break
                     }
                 }
+                
+                if self.oldRemindIdentifier.count > 0{
+                    removeNotifaction(identifiers: self.oldRemindIdentifier)
+                }
+                
                 UserDefaults.standard.set(NSArray(array: tempDateDataAry), forKey: "noteListAry")
                 UserDefaults.standard.synchronize()
                 
@@ -155,6 +194,22 @@ class JONoteDetailVC: JOBaseVC {
         bodyTextView?.resignFirstResponder()
         titleTextField?.resignFirstResponder()
     }
+    
+   private func getRemindTimeValue() -> String
+    {
+//        let indexDatePicker = self.view.viewWithTag(1)as! UIindexDatePicker//通过tag获取indexDatePicker对象
+        let date = indexDatePicker.date//获取选定的值
+        //初始化日期格式化对象
+        let dateFormatter = DateFormatter()
+        //设置日期格式化对象的具体格式
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        //将选定的值转换为string格式以设定格式输出
+        let dateAndTime = dateFormatter.string(from: date)
+        print(dateAndTime)
+        return dateAndTime
+    }
+    
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -195,6 +250,72 @@ class JONoteDetailVC: JOBaseVC {
                 maker.height.equalTo(0.5)
             }
         )
+        
+        let dueTimeBtn = UIButton(type: .system)
+        dueTimeBtn.setTitle("提醒时间", for: .normal)
+        dueTimeBtn.backgroundColor = .lightGray
+        dueTimeBtn.layer.cornerRadius = 5
+        self.view.addSubview(dueTimeBtn)
+        dueTimeBtn.snp.makeConstraints(
+            {(maker) in
+                maker.top.equalTo(line.snp.bottom).offset(5)
+                maker.left.equalTo(15)
+                maker.width.equalTo(80)
+                maker.height.equalTo(30)
+            }
+        )
+        
+        //设置tag(可通过tag来获取其对象)
+        indexDatePicker = UIDatePicker()
+        indexDatePicker.tag = 1
+        //设置显示模式为日期时间
+        indexDatePicker.datePickerMode = UIDatePicker.Mode.dateAndTime
+        //设置最大值，最小值
+        indexDatePicker.maximumDate = Date(timeInterval:7*24*60*60,since:Date())//设置最大值为现在时间往后7天以内
+//        indexDatePicker.minimumDate = Date()//设置最小值为现在
+        //更改地区文字
+        indexDatePicker.locale = Locale(identifier: "zh_CN")
+        //设置文字颜色
+        indexDatePicker.setValue(UIColor.red, forKey: "textColor")
+        //添加到视图中
+        self.view.addSubview(indexDatePicker)
+        
+        indexDatePicker.snp.makeConstraints(
+            {(maker) in
+                maker.top.equalTo(line.snp.bottom).offset(5)
+                maker.left.equalTo(dueTimeBtn.snp.right).offset(15)
+                maker.width.equalTo(200)
+                maker.height.equalTo(30)
+            }
+        )
+        
+//        dueTimeBtn.addTarget(self, action: #selector(seldueTime), for: .touchUpInside)
+        
+//        dueTimeLbl = UILabel()
+//        dueTimeLbl.layer.cornerRadius = 5
+//        self.view.addSubview(dueTimeLbl)
+//        dueTimeLbl.snp.makeConstraints(
+//            {(maker) in
+//                maker.top.equalTo(line.snp.bottom).offset(5)
+//                maker.left.equalTo(dueTimeBtn.snp.right).offset(5)
+//                maker.right.equalTo(-30)
+//                maker.height.equalTo(30)
+//            }
+//        )
+        
+        
+        let lineMidle = UIView()
+        self.view.addSubview(lineMidle)
+        lineMidle.backgroundColor = UIColor.gray
+        lineMidle.snp.makeConstraints(
+            {(maker) in
+                maker.top.equalTo(dueTimeBtn.snp.bottom).offset(5)
+                maker.left.equalTo(15)
+                maker.right.equalTo(-15)
+                maker.height.equalTo(0.5)
+            }
+        )
+        
         bodyTextView = UITextView()
         bodyTextView?.layer.borderColor = UIColor.gray.cgColor
         bodyTextView?.layer.borderWidth = 1
@@ -203,17 +324,31 @@ class JONoteDetailVC: JOBaseVC {
         self.view.addSubview(bodyTextView!)
         bodyTextView?.snp.makeConstraints(
             {(maker) in
-                maker.top.equalTo(line.snp.bottom).offset(10)
+                maker.top.equalTo(lineMidle.snp.bottom).offset(10)
                 maker.left.equalTo(30)
                 maker.right.equalTo(-30)
                 maker.bottom.equalTo(-30)
             }
         )
+        oldRemindIdentifier = ""
         if !isNew{
             let indextitle = indexNote!["title"] as! String
             let indexContent = indexNote!["content"] as! String
             titleTextField?.text = indextitle
             bodyTextView?.text = indexContent
+            
+            let indexRemindTime = indexNote!["remindTime"] as! String
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm" // 设置日期格式
+            if let date = formatter.date(from: indexRemindTime) {
+//                indexDatePicker.date = date
+                indexDatePicker.setDate(date, animated: true)
+                oldRemindIdentifier = indextitle + date.description
+            } else {
+                print("无法将字符串转换为日期")
+            }
+
+            
         }
     }
     
