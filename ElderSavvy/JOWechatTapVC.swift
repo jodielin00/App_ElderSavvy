@@ -50,74 +50,148 @@ class JOWechatTapVC: UIViewController {
     func setUpImgWithIndex(indexValue:Int){
         let width = CGRectGetWidth(coverView.frame)
         var indexname = ""
+        
+        if indexImgValue == 1001 {
+            self.navigationController?.popViewController(animated: false)
+            return
+        }
+        
         if detailType == "wechatVideo"{
             if indexImgValue == 0 {
-                indexname = "wevideo01"
+                indexname = "wVideochat1"
+                speakIndexStr(indexStr: "点击聊天框")
                 
             }else if indexImgValue == 1{
-                indexname = "wevideo02"
+                indexname = "wVideochat2"
+                speakIndexStr(indexStr: "点击加号")
                 
             }else if indexImgValue == 2{
-                indexname = "wevideo03"
+                indexname = "wVideochat3"
+                speakIndexStr(indexStr: "点击视频通话")
                 
             }else if indexImgValue == 3{
-                indexname = "wevideo04"
-                indexImgValue = -1
+                indexname = "wVideochat4"
+                indexImgValue = 1000
                 
             }
         }else if detailType == "wechatVoice"{
             if indexImgValue == 0 {
-                indexname = "wevideo01"
+                indexname = "wVoicechat1"
+                speakIndexStr(indexStr: "点击聊天框")
                 
             }else if indexImgValue == 1{
-                indexname = "wevideo02"
+                indexname = "wVoicechat2"
+                speakIndexStr(indexStr: "点击加号")
                 
             }else if indexImgValue == 2{
-                indexname = "wevoice03"
+                indexname = "wVoicechat3"
+                speakIndexStr(indexStr: "点击语音通话")
                 
             }else if indexImgValue == 3{
-                indexname = "wevideo04"
-                indexImgValue = -1
+                indexname = "wVoicechat4"
+                indexImgValue = 1000
                 
             }
         }else if detailType == "wechatTransfer"{
             if indexImgValue == 0 {
-                indexname = "wevideo01"
+                indexname = "wTransfer1"
+                speakIndexStr(indexStr: "点击转账对象的对话框")
                 
             }else if indexImgValue == 1{
-                indexname = "wevideo02"
+                indexname = "wTransfer2"
+                speakIndexStr(indexStr: "点击加号")
                 
             }else if indexImgValue == 2{
-                indexname = "weTran03"
+                indexname = "wTransfer3"
+                speakIndexStr(indexStr: "选择转帐")
                 
             }else if indexImgValue == 3{
-                indexname = "weTran04"
+                indexname = "wTransfer4"
+                speakIndexStr(indexStr: "输入转账金额后点击转账")
                 
             }else if indexImgValue == 4{
-                indexname = "weTran05"
-                indexImgValue = -1
+                indexname = "wTransfer5"
+                speakIndexStr(indexStr: "输入支付密码")
+                indexImgValue = 1000
             }
         }else if detailType == "wechatScan"{
             if indexImgValue == 0 {
-                indexname = "wechatAdd"
+                indexname = "wScan1"
+                speakIndexStr(indexStr: "点击右上角加号")
                 
             }else if indexImgValue == 1{
-                indexname = "wechatScan"
-                indexImgValue = -1
+                indexname = "wScan2"
+                speakIndexStr(indexStr: "点击扫一扫")
+                
+            }else if indexImgValue == 2{
+                indexname = "wScan3"
+                indexImgValue = 1000
             }
         }else if detailType == "wechatOpenPay"{
             if indexImgValue == 0 {
-                indexname = "weOpenPay"
+                indexname = "wPay1"
+                speakIndexStr(indexStr: "点击右上角加号")
                 
             }else if indexImgValue == 1{
-                indexname = "weOpenPay02"
-                indexImgValue = -1
+                indexname = "wPay2"
+                speakIndexStr(indexStr: "点击收付款")
+                
+            }else if indexImgValue == 2{
+                indexname = "wPay3"
+                indexImgValue = 1000
             }
+        }else if detailType == "aliTransfer"{
+            if indexImgValue == 0 {
+                indexname = "aliTransfer1"
+                speakIndexStr(indexStr: "点击转账")
+                
+            }else if indexImgValue == 1{
+                indexname = "aliTransfer2"
+                speakIndexStr(indexStr: "输入转账对象手机号")
+                
+            }else if indexImgValue == 2{
+                indexname = "aliTransfer3"
+                speakIndexStr(indexStr: "选择转账对象")
+                
+            }else if indexImgValue == 3{
+                indexname = "aliTransfer4"
+                speakIndexStr(indexStr: "输入转账金额")
+                indexImgValue = 1000
+            }
+        }else if detailType == "aliScan"{
+            if indexImgValue == 0 {
+                indexname = "aliScan1"
+                speakIndexStr(indexStr: "点击扫一扫")
+                
+            }else if indexImgValue == 1{
+                indexname = "aliScan2"
+                indexImgValue = 1000
+            }
+        }else if detailType == "aliPay"{
+            if indexImgValue == 0 {
+                indexname = "aliPay1"
+                speakIndexStr(indexStr: "点击付钱或收钱")
+                
+            }else if indexImgValue == 1{
+                indexname = "aliPay2"
+                indexImgValue = 1000
+            }
+        }else if detailType == "toWechatPay"{
+            indexname = "wPay3"
+            speakIndexStr(indexStr: "微信收付款")
+        }else if detailType == "toAliPay"{
+            indexname = "aliPay2"
+            speakIndexStr(indexStr: "支付宝收付款")
         }
         
         backImgView.image = UIImage(named: indexname)
         indexImgValue! += 1
     }
+    
+    func speakIndexStr(indexStr: String) {
+        JOSpeechObject.shared.speakIndexStr(indexStr: indexStr)
+    }
+        
     /*
     // MARK: - Navigation
 

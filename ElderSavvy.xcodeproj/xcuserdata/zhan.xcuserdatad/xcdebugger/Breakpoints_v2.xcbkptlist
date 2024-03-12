@@ -94,6 +94,21 @@
                   endingLineNumber = "114"
                   offsetFromSymbolStart = "7924">
                </Location>
+               <Location
+                  uuid = "2265B8A8-D55A-4BCC-B81B-31AB62AEEFCA - f8e4afef2c89d0d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/App_ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "8044">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -187,6 +202,21 @@
                   endingLineNumber = "116"
                   offsetFromSymbolStart = "8152">
                </Location>
+               <Location
+                  uuid = "937AC11B-8331-45AC-97DE-C0BE43FC53C2 - f8e4afef2c89d017"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/App_ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "8272">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -279,6 +309,21 @@
                   startingLineNumber = "120"
                   endingLineNumber = "120"
                   offsetFromSymbolStart = "8996">
+               </Location>
+               <Location
+                  uuid = "8AABF007-3E09-4965-A99F-78CC38E4910F - f8e4afef2c89d193"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElderSavvy.JONoteDetailVC.addNote() -&gt; ()"
+                  moduleName = "ElderSavvy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhan/App_ElderSavvy/ElderSavvy/JONoteDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "9116">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -456,6 +501,38 @@
             startingLineNumber = "346"
             endingLineNumber = "346"
             landmarkName = "installUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50518D09-4348-49E0-BC19-13B283B1A7E2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElderSavvy/JOCodeListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "touchWechatPay(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F834CC6D-8C4D-45AF-8721-7B72BE5A8B3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElderSavvy/JOCodeListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "touchAliPay(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

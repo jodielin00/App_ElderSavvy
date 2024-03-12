@@ -24,6 +24,51 @@ class JOAddressVC: UIViewController {
         mapView.mapType = MKMapType.standard
         mapView.showsBuildings = true
         mapView.delegate = self
+//        mapView.showsUserLocation = true
+        
+        // 设置中心点坐标
+//                let centerCoordinate = CLLocationCoordinate2D(latitude: 23.17881107170488, longitude: 113.26347675918576)
+//                let centerSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05) // 缩放级别
+//                let region = MKCoordinateRegion(center: centerCoordinate, span: centerSpan)
+                
+        
+        let coordinate =  CLLocationCoordinate2D(latitude: 22.28512194624257, longitude: 114.1467661268296)
+        let annotation:MYAkjation = addAnnotation(coordinate, title: "", subTitle: "")
+//        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(annotation)
+        mapView.isScrollEnabled = true
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        geochange.reverseGeocodeLocation(location) { (pls: [CLPlacemark]?, error: Error?) -> Void in
+            if error == nil {
+                let pl = pls?.first
+                annotation.title = pl?.locality
+                annotation.subtitle = pl?.name
+            }
+        }
+        
+        
+        let coordinateT =  CLLocationCoordinate2D(latitude: 22.427142881762666, longitude: 114.2070683111552)
+        let annotationT:MYAkjation = addAnnotation(coordinateT, title: "", subTitle: "")
+//        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(annotationT)
+        mapView.isScrollEnabled = true
+        let locationT = CLLocation(latitude: coordinateT.latitude, longitude: coordinateT.longitude)
+        geochange.reverseGeocodeLocation(locationT) { (pls: [CLPlacemark]?, error: Error?) -> Void in
+            if error == nil {
+                let pl = pls?.first
+                annotationT.title = pl?.locality
+                annotationT.subtitle = pl?.name
+            }
+        }
+        
+        let latDelta = 0.135
+        let longDelta = 0.135
+        let  center =  CLLocationCoordinate2D(latitude: 22.3561322881762666, longitude: 114.17691711552)
+        let currentLocationSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
+        let  currentRegion =  MKCoordinateRegion (center: center, span: currentLocationSpan)
+        mapView.setRegion(currentRegion, animated: true)
+                // 设置地图的区域
+//                mapView.setRegion(region, animated: true)
         
     }
     
@@ -149,7 +194,7 @@ extension JOAddressVC: MKMapViewDelegate,CLLocationManagerDelegate {
         
         let latDelta = 0.005
         let longDelta = 0.005
-        let  center =  CLLocationCoordinate2DMake(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
+        let  center =  CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
         let currentLocationSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
         let  currentRegion =  MKCoordinateRegion (center: center, span: currentLocationSpan)
         mapView.setRegion(currentRegion, animated: true)

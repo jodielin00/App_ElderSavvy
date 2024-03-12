@@ -45,12 +45,18 @@ class JOSoftListVC: UIViewController {
     }
     
     @IBAction func aliTransfer(_ sender: Any) {
+        detailType = "aliTransfer"
+        performSegue(withIdentifier: "wechatTapVC", sender: nil)
     }
     
     @IBAction func aliScan(_ sender: Any) {
+        detailType = "aliScan"
+        performSegue(withIdentifier: "wechatTapVC", sender: nil)
     }
     
     @IBAction func aliOpenPay(_ sender: Any) {
+        detailType = "aliPay"
+        performSegue(withIdentifier: "wechatTapVC", sender: nil)
     }
     
     

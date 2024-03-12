@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     }
     @objc func touchCode(tap: UITapGestureRecognizer) {
         self.speakIndexStr(indexStr: "点击二维码")
-        performSegue(withIdentifier: "toRecordVC", sender: nil)
+        performSegue(withIdentifier: "codelistvc", sender: nil)
         
     }
     @objc func touchAddress(tap: UITapGestureRecognizer) {
