@@ -84,11 +84,29 @@ class JOAddressVC: UIViewController {
     }
     
     @IBAction func clickHomeAddress(_ sender: Any) {
+        let coordinate =  CLLocationCoordinate2D(latitude: 22.28512194624257, longitude: 114.1467661268296)
+        let annotation:MYAkjation = addAnnotation(coordinate, title: "", subTitle: "")
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(annotation)
+        mapView.isScrollEnabled = true
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        geochange.reverseGeocodeLocation(location) { (pls: [CLPlacemark]?, error: Error?) -> Void in
+            if error == nil {
+                let pl = pls?.first
+                annotation.title = pl?.locality
+                annotation.subtitle = pl?.name
+            }
+        }
+        
+        let latDelta = 0.005
+        let longDelta = 0.005
+        let  center =  CLLocationCoordinate2D(latitude: 22.28512194624257, longitude: 114.1467661268296)
+        let currentLocationSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
+        let  currentRegion =  MKCoordinateRegion (center: center, span: currentLocationSpan)
+        mapView.setRegion(currentRegion, animated: true)
     }
     
     
-    @IBAction func clickWorkAddress(_ sender: Any) {
-    }
     
     
     
