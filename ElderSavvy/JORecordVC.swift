@@ -45,6 +45,7 @@ class JORecordVC: UIViewController {
         super.viewWillAppear(true)
 //        self.navigationController?.navigationBar.isHidden = false
         let tempDateDataAry = NSMutableArray()
+        selisNew = false
         if let tempAry = UserDefaults.standard.value(forKey: "noteListAry") as? Array<Dictionary<String, String>> {
             tempDateDataAry.addObjects(from: tempAry)
             tempAllDataAry = tempDateDataAry
