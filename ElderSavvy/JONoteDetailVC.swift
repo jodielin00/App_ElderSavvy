@@ -17,6 +17,10 @@ class JONoteDetailVC: UIViewController {
     var indexDatePicker:UIDatePicker!
     var oldRemindIdentifier:String!
     
+    @IBOutlet weak var deleteBtn: UIButton!
+    
+    @IBOutlet weak var saveBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,8 +39,10 @@ class JONoteDetailVC: UIViewController {
         let itemDelete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteNote))
         if self.isNew {
             self.navigationItem.rightBarButtonItems = [itemSave]
+            self.deleteBtn.isHidden = true
         }else{
             self.navigationItem.rightBarButtonItems = [itemSave,itemDelete]
+            self.deleteBtn.isHidden = false
         }
         
     }
@@ -213,27 +219,35 @@ class JONoteDetailVC: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    
+    @IBAction func clickdelete(_ sender: Any) {
+        deleteNote()
+    }
+    
+    @IBAction func clickSave(_ sender: Any) {
+        addNote()
+    }
+    
+    
     func installUI(){
-        let backImgView = UIImageView(frame: self.view.frame)
-        self.view.addSubview(backImgView)
-        backImgView.image = UIImage.init(named: "backGroundImg")
-        titleTextField?.snp.makeConstraints(
-            {(maker) in
-                maker.top.equalTo(0)
-                maker.left.equalTo(0)
-                maker.right.equalTo(0)
-                maker.height.equalTo(0)
-            }
-        )
+//        let backImgView = UIImageView(frame: self.view.frame)
+//        self.view.addSubview(backImgView)
+//        backImgView.image = UIImage.init(named: "backGroundImg")
         
         titleTextField = UITextField()
         self.view.addSubview(titleTextField!)
         titleTextField?.borderStyle = .none
-        titleTextField?.placeholder = "请输入要事标题"
-        titleTextField?.font = UIFont.systemFont(ofSize: 25)
+        titleTextField?.placeholder = "这是标题"
+        titleTextField?.font = UIFont.systemFont(ofSize: 30)
+        titleTextField?.textColor = UIColor.black
         titleTextField?.snp.makeConstraints(
             {(maker) in
-                maker.top.equalTo(30)
+                maker.top.equalTo(123)
                 maker.left.equalTo(30)
                 maker.right.equalTo(-30)
                 maker.height.equalTo(30)
@@ -241,29 +255,29 @@ class JONoteDetailVC: UIViewController {
         )
         let line = UIView()
         self.view.addSubview(line)
-        line.backgroundColor = UIColor.gray
+        line.backgroundColor = UIColor.black
         line.snp.makeConstraints(
             {(maker) in
                 maker.top.equalTo(titleTextField!.snp.bottom).offset(5)
-                maker.left.equalTo(15)
-                maker.right.equalTo(-15)
+                maker.left.equalTo(20)
+                maker.right.equalTo(-20)
                 maker.height.equalTo(0.5)
             }
         )
         
-        let dueTimeBtn = UIButton(type: .system)
-        dueTimeBtn.setTitle("提醒时间", for: .normal)
-        dueTimeBtn.backgroundColor = .lightGray
-        dueTimeBtn.layer.cornerRadius = 5
-        self.view.addSubview(dueTimeBtn)
-        dueTimeBtn.snp.makeConstraints(
-            {(maker) in
-                maker.top.equalTo(line.snp.bottom).offset(5)
-                maker.left.equalTo(15)
-                maker.width.equalTo(80)
-                maker.height.equalTo(30)
-            }
-        )
+//        let dueTimeBtn = UIButton(type: .system)
+//        dueTimeBtn.setTitle("提醒时间", for: .normal)
+//        dueTimeBtn.backgroundColor = .lightGray
+//        dueTimeBtn.layer.cornerRadius = 5
+//        self.view.addSubview(dueTimeBtn)
+//        dueTimeBtn.snp.makeConstraints(
+//            {(maker) in
+//                maker.top.equalTo(line.snp.bottom).offset(5)
+//                maker.left.equalTo(15)
+//                maker.width.equalTo(80)
+//                maker.height.equalTo(30)
+//            }
+//        )
         
         //设置tag(可通过tag来获取其对象)
         indexDatePicker = UIDatePicker()
@@ -279,13 +293,14 @@ class JONoteDetailVC: UIViewController {
         indexDatePicker.setValue(UIColor.red, forKey: "textColor")
         //添加到视图中
         self.view.addSubview(indexDatePicker)
-        
+//        indexDatePicker.backgroundColor = UIColor(red: 182/255.0, green: 193/255.0, blue: 147/255.0, alpha: 1)
+        indexDatePicker.backgroundColor = UIColor.clear
         indexDatePicker.snp.makeConstraints(
             {(maker) in
-                maker.top.equalTo(line.snp.bottom).offset(5)
-                maker.left.equalTo(dueTimeBtn.snp.right).offset(15)
-                maker.width.equalTo(200)
-                maker.height.equalTo(30)
+                maker.top.equalTo(line.snp.bottom).offset(10)
+                maker.centerX.equalToSuperview()
+//                maker.width.equalTo(225)
+                maker.height.equalTo(40)
             }
         )
         
@@ -304,30 +319,32 @@ class JONoteDetailVC: UIViewController {
 //        )
         
         
-        let lineMidle = UIView()
-        self.view.addSubview(lineMidle)
-        lineMidle.backgroundColor = UIColor.gray
-        lineMidle.snp.makeConstraints(
-            {(maker) in
-                maker.top.equalTo(dueTimeBtn.snp.bottom).offset(5)
-                maker.left.equalTo(15)
-                maker.right.equalTo(-15)
-                maker.height.equalTo(0.5)
-            }
-        )
+//        let lineMidle = UIView()
+//        self.view.addSubview(lineMidle)
+//        lineMidle.backgroundColor = UIColor.gray
+//        lineMidle.snp.makeConstraints(
+//            {(maker) in
+//                maker.top.equalTo(dueTimeBtn.snp.bottom).offset(5)
+//                maker.left.equalTo(15)
+//                maker.right.equalTo(-15)
+//                maker.height.equalTo(0.5)
+//            }
+//        )
         
         bodyTextView = UITextView()
-        bodyTextView?.layer.borderColor = UIColor.gray.cgColor
         bodyTextView?.layer.borderWidth = 1
-        bodyTextView?.backgroundColor = UIColor.clear
+        bodyTextView?.layer.borderColor = UIColor(red: 75/255.0, green: 110/255.0, blue: 100/255.0, alpha: 1).cgColor
+        
+        bodyTextView?.backgroundColor = UIColor(red: 213/255.0, green: 223/255.0, blue: 185/255.0, alpha: 1)
+        bodyTextView?.textColor = UIColor(red: 21/255.0, green: 22/255.0, blue: 19/255.0, alpha: 1)
         bodyTextView?.font = UIFont.systemFont(ofSize: 25)
         self.view.addSubview(bodyTextView!)
         bodyTextView?.snp.makeConstraints(
             {(maker) in
-                maker.top.equalTo(lineMidle.snp.bottom).offset(10)
-                maker.left.equalTo(30)
-                maker.right.equalTo(-30)
-                maker.bottom.equalTo(-30)
+                maker.top.equalTo(indexDatePicker.snp.bottom).offset(20)
+                maker.left.equalTo(20)
+                maker.right.equalTo(-20)
+                maker.bottom.equalTo(-20)
             }
         )
         oldRemindIdentifier = ""

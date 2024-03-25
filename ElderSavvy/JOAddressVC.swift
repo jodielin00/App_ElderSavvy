@@ -112,18 +112,43 @@ class JOAddressVC: UIViewController {
     
     @IBAction func clickLocation(_ sender: Any) {
         
-        // 开始定位服务
-        if CLLocationManager.authorizationStatus() == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        } else if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .restricted {
-            print("无法访问位置信息")
-        } else {
-            startLocationServices()
+        let coordinate =  CLLocationCoordinate2D(latitude: 22.427142881762666, longitude: 114.2070683111552)
+        let annotation:MYAkjation = addAnnotation(coordinate, title: "", subTitle: "")
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(annotation)
+        mapView.isScrollEnabled = true
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        geochange.reverseGeocodeLocation(location) { (pls: [CLPlacemark]?, error: Error?) -> Void in
+            if error == nil {
+                let pl = pls?.first
+                annotation.title = pl?.locality
+                annotation.subtitle = pl?.name
+            }
         }
+        
+        let latDelta = 0.005
+        let longDelta = 0.005
+        let  center =  CLLocationCoordinate2D(latitude: 22.427142881762666, longitude: 114.2070683111552)
+        let currentLocationSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
+        let  currentRegion =  MKCoordinateRegion (center: center, span: currentLocationSpan)
+        mapView.setRegion(currentRegion, animated: true)
+        
+        
+//        // 开始定位服务
+//        if CLLocationManager.authorizationStatus() == .notDetermined {
+//            locationManager.requestWhenInUseAuthorization()
+//        } else if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .restricted {
+//            print("无法访问位置信息")
+//        } else {
+//            startLocationServices()
+//        }
         
 
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
     
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()

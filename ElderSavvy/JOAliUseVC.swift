@@ -1,37 +1,46 @@
 //
-//  JOCodeListVC.swift
+//  JOAliUseVC.swift
 //  ElderSavvy
 //
-//  Created by jodielin on 2024/3/11.
+//  Created by jodielin on 2024/3/21.
 //
 
 import UIKit
 
-class JOCodeListVC: UIViewController {
+class JOAliUseVC: UIViewController {
 
+    var detailType:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        detailType = ""
+        self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: false)
     }
-    @IBAction func touchWechatPay(_ sender: Any) {
-        performSegue(withIdentifier: "toPayimage", sender: "toWechatPay")
+    
+    @IBAction func aliTransfer(_ sender: Any) {
+        detailType = "aliTransfer"
+        performSegue(withIdentifier: "toAliTapVC", sender: nil)
     }
     
-    @IBAction func touchAliPay(_ sender: Any) {
-        performSegue(withIdentifier: "toPayimage", sender: "toAliPay")
+    @IBAction func aliScan(_ sender: Any) {
+        detailType = "aliScan"
+        performSegue(withIdentifier: "toAliTapVC", sender: nil)
+    }
+    
+    @IBAction func aliOpenPay(_ sender: Any) {
+        detailType = "aliPay"
+        performSegue(withIdentifier: "toAliTapVC", sender: nil)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toPayimage" {
-            let detailTypeStr:String = sender as! String
+        if segue.identifier == "toAliTapVC" {
                 if let destinationVC = segue.destination as? JOWechatTapVC {
-                    destinationVC.detailType = detailTypeStr
+                    destinationVC.detailType = detailType
                 }
             }
     }

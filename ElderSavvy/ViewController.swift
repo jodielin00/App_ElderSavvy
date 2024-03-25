@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -66,7 +66,9 @@ class ViewController: UIViewController {
     
     @objc func touchSoftUse(tap: UITapGestureRecognizer) {
         self.speakIndexStr(indexStr: "点击软件使用")
-        performSegue(withIdentifier: "JOSoftList", sender: nil)
+//        performSegue(withIdentifier: "JOSoftList", sender: nil)
+        performSegue(withIdentifier: "toSoftListVC", sender: nil)
+        
         
     }
     @objc func touchCode(tap: UITapGestureRecognizer) {

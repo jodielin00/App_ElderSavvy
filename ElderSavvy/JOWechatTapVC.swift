@@ -30,6 +30,10 @@ class JOWechatTapVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
@@ -37,7 +41,6 @@ class JOWechatTapVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
     }
     
     @objc func touchRemind(tap: UITapGestureRecognizer) {

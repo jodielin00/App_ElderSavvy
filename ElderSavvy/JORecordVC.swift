@@ -54,6 +54,15 @@ class JORecordVC: UIViewController {
         }
         self.tableview.reloadData()
     }
+    @IBAction func addNewNote(_ sender: Any) {
+        addNote()
+    }
+    
+    
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     func installNavgationItem(){
         let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNote))
 //        let deleteItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deteleGroup))
@@ -105,9 +114,10 @@ extension JORecordVC:UITableViewDelegate,UITableViewDataSource{
                 let indexStr = indexdic?["title"] as? String
                 let contentStr = indexdic?["content"] as? String
                 cell?.textLabel?.text = indexStr
-                cell?.textLabel?.font = UIFont.systemFont(ofSize: 25)
+                cell?.textLabel?.font = UIFont.systemFont(ofSize: 30)
                 cell?.detailTextLabel?.text = contentStr
-                cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 25)
+                cell?.detailTextLabel?.textColor = UIColor(red: 121/255.0, green: 121/255.0, blue: 121/255.0, alpha: 121/255.0)
+                cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 30)
                 cell?.accessoryType = .disclosureIndicator
                 cell?.contentView.backgroundColor = UIColor.clear;
                 cell?.backgroundColor = UIColor.clear;
@@ -138,6 +148,9 @@ extension JORecordVC:UITableViewDelegate,UITableViewDataSource{
         
         return ""
     }
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "noteDetailVC" {

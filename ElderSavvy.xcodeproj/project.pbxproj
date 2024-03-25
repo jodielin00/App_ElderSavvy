@@ -10,6 +10,7 @@
 		7F116E1A2B91BA5600C1DA00 /* JOTextConversionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F116E192B91BA5600C1DA00 /* JOTextConversionVC.swift */; };
 		7F116E1D2B91C88100C1DA00 /* JOConvertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F116E1C2B91C88100C1DA00 /* JOConvertTool.m */; };
 		7F16DD302B9D9A2F00CD8ACF /* JOSpeechObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16DD2F2B9D9A2F00CD8ACF /* JOSpeechObject.swift */; };
+		7F53D4212BAAD8E800D70EAD /* JONewSwitchSoftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53D4202BAAD8E800D70EAD /* JONewSwitchSoftVC.swift */; };
 		7F736E022B8B37FD00C222F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F736E012B8B37FD00C222F7 /* AppDelegate.swift */; };
 		7F736E042B8B37FD00C222F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F736E032B8B37FD00C222F7 /* SceneDelegate.swift */; };
 		7F736E062B8B37FD00C222F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F736E052B8B37FD00C222F7 /* ViewController.swift */; };
@@ -75,6 +76,8 @@
 		7FBC5F962B8B723E00A2302F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC5F702B8B723E00A2302F /* README.md */; };
 		7FBC5F982B8B725700A2302F /* JONoteDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC5F972B8B725700A2302F /* JONoteDetailVC.swift */; };
 		7FBC5F9A2B8B729C00A2302F /* JOBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC5F992B8B729C00A2302F /* JOBaseVC.swift */; };
+		7FD0EA4F2BAC11B200207818 /* JOWechatUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD0EA4E2BAC11B200207818 /* JOWechatUseVC.swift */; };
+		7FD0EA512BAC11CB00207818 /* JOAliUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD0EA502BAC11CB00207818 /* JOAliUseVC.swift */; };
 		7FD894D62B9F47BB00576374 /* JOCodeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD894D52B9F47BB00576374 /* JOCodeListVC.swift */; };
 		7FE825E92B945BF600AC35DD /* JOWechatTapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE825E82B945BF600AC35DD /* JOWechatTapVC.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +87,7 @@
 		7F116E1B2B91C88100C1DA00 /* JOConvertTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JOConvertTool.h; sourceTree = "<group>"; };
 		7F116E1C2B91C88100C1DA00 /* JOConvertTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JOConvertTool.m; sourceTree = "<group>"; };
 		7F16DD2F2B9D9A2F00CD8ACF /* JOSpeechObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOSpeechObject.swift; sourceTree = "<group>"; };
+		7F53D4202BAAD8E800D70EAD /* JONewSwitchSoftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JONewSwitchSoftVC.swift; sourceTree = "<group>"; };
 		7F736DFE2B8B37FD00C222F7 /* ElderSavvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElderSavvy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F736E012B8B37FD00C222F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F736E032B8B37FD00C222F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 		7FBC5F702B8B723E00A2302F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7FBC5F972B8B725700A2302F /* JONoteDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JONoteDetailVC.swift; sourceTree = "<group>"; };
 		7FBC5F992B8B729C00A2302F /* JOBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBaseVC.swift; sourceTree = "<group>"; };
+		7FD0EA4E2BAC11B200207818 /* JOWechatUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOWechatUseVC.swift; sourceTree = "<group>"; };
+		7FD0EA502BAC11CB00207818 /* JOAliUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOAliUseVC.swift; sourceTree = "<group>"; };
 		7FD894D52B9F47BB00576374 /* JOCodeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOCodeListVC.swift; sourceTree = "<group>"; };
 		7FE825E82B945BF600AC35DD /* JOWechatTapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOWechatTapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +217,9 @@
 				7F736E192B8B47F700C222F7 /* JORecordVC.swift */,
 				7FBC5F972B8B725700A2302F /* JONoteDetailVC.swift */,
 				7F891A572B8CA096006A3C41 /* JOSoftListVC.swift */,
+				7F53D4202BAAD8E800D70EAD /* JONewSwitchSoftVC.swift */,
+				7FD0EA4E2BAC11B200207818 /* JOWechatUseVC.swift */,
+				7FD0EA502BAC11CB00207818 /* JOAliUseVC.swift */,
 				7FD894D52B9F47BB00576374 /* JOCodeListVC.swift */,
 				7F891A592B8CA733006A3C41 /* JOAddressVC.swift */,
 				7F116E192B91BA5600C1DA00 /* JOTextConversionVC.swift */,
@@ -413,6 +422,7 @@
 				7FBC5F772B8B723E00A2302F /* ConstraintViewDSL.swift in Sources */,
 				7FBC5F872B8B723E00A2302F /* ConstraintOffsetTarget.swift in Sources */,
 				7FBC5F752B8B723E00A2302F /* ConstraintMakerPriortizable.swift in Sources */,
+				7FD0EA4F2BAC11B200207818 /* JOWechatUseVC.swift in Sources */,
 				7F891A5A2B8CA733006A3C41 /* JOAddressVC.swift in Sources */,
 				7F736E1A2B8B47F700C222F7 /* JORecordVC.swift in Sources */,
 				7F736E062B8B37FD00C222F7 /* ViewController.swift in Sources */,
@@ -420,6 +430,7 @@
 				7FBC5F892B8B723E00A2302F /* ConstraintMaker.swift in Sources */,
 				7FBC5F782B8B723E00A2302F /* ConstraintPriorityTarget.swift in Sources */,
 				7FBC5F8C2B8B723E00A2302F /* ConstraintView+Extensions.swift in Sources */,
+				7FD0EA512BAC11CB00207818 /* JOAliUseVC.swift in Sources */,
 				7FBC5F852B8B723E00A2302F /* Typealiases.swift in Sources */,
 				7F736E022B8B37FD00C222F7 /* AppDelegate.swift in Sources */,
 				7F891A532B8C8AA2006A3C41 /* ZJAudioHelp.m in Sources */,
@@ -435,6 +446,7 @@
 				7FD894D62B9F47BB00576374 /* JOCodeListVC.swift in Sources */,
 				7FBC5F932B8B723E00A2302F /* ConstraintDirectionalInsets.swift in Sources */,
 				7FBC5F742B8B723E00A2302F /* ConstraintDescription.swift in Sources */,
+				7F53D4212BAAD8E800D70EAD /* JONewSwitchSoftVC.swift in Sources */,
 				7FBC5F862B8B723E00A2302F /* ConstraintConstantTarget.swift in Sources */,
 				7FBC5F7E2B8B723E00A2302F /* ConstraintInsetTarget.swift in Sources */,
 				7FE825E92B945BF600AC35DD /* JOWechatTapVC.swift in Sources */,
@@ -611,7 +623,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "请求定位";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "请求使用麦克风进行语言转化为文字";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -652,7 +664,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "请求定位";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "请求使用麦克风进行语言转化为文字";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

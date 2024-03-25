@@ -18,6 +18,11 @@ class JOTextConversionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        inputTF.layer.borderWidth = 1;
+        inputTF.layer.borderColor = UIColor(red: 75/255.0, green: 110/255.0, blue: 100/255.0, alpha: 1).cgColor
+        outputTF.layer.borderWidth = 1;
+        outputTF.layer.borderColor = UIColor(red: 75/255.0, green: 110/255.0, blue: 100/255.0, alpha: 1).cgColor
+        
         speakStr = ""
         indexIFlySpeechRecognizer = IFlySpeechRecognizer.sharedInstance()
         //设置识别参数
@@ -25,7 +30,7 @@ class JOTextConversionVC: UIViewController {
         indexIFlySpeechRecognizer.setParameter("iat", forKey: IFlySpeechConstant.ifly_DOMAIN())
         
         //asr_audio_path 是录音文件名，设置value为nil或者为空取消保存，默认保存目录在Library/cache下。
-        indexIFlySpeechRecognizer .setParameter("iat.pcm", forKey: IFlySpeechConstant.asr_AUDIO_PATH())
+        indexIFlySpeechRecognizer.setParameter("iat.pcm", forKey: IFlySpeechConstant.asr_AUDIO_PATH())
 
         //    https://www.xfyun.cn/doc/asr/voicedictation/iOS-SDK.html#_3、常用参数说明
         //        开始录入音频后，音频前面部分最长静音时长，取值范围[0,10000ms]，默认值5000ms
@@ -35,6 +40,11 @@ class JOTextConversionVC: UIViewController {
         indexIFlySpeechRecognizer.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     @IBAction func convertToVoice(_ sender: Any) {
         if inputTF.text.count > 0{
             speakIndexStr(indexStr: inputTF.text)
